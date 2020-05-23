@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        
+  
+  
+  <modelVersion>4.0.0</modelVersion>
+        
+  
+  
+  <groupId>de.stl.saar.internetentw1.uebungen</groupId>
+        
+  
+  
+  <artifactId>Maven</artifactId>
+        
+  
+  
+  <packaging>pom</packaging>
+        
+  
+  
+  <version>1.0-SNAPSHOT</version>
+        
+  
+  
+  <name>Maven</name>
+        
+  
+  
+  <url>http://maven.apache.org</url>
+        
+  
+  
+  <modules>
+                
+    
+    
+    <module>Model</module>
+              
+    
+    
+    <module>Core</module>
+          
+    
+    <module>Persistence</module>
+      
+  </modules>
+        
+  
+  
+  <dependencies>
+                  
+    
+    
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+                  
+    
+    
+    <dependency>
+                            
+      
+      
+      <groupId>junit</groupId>
+                            
+      
+      
+      <artifactId>junit</artifactId>
+                            
+      
+      
+      <version>4.13</version>
+                            
+      
+      
+      <scope>test</scope>
+                        
+    
+    
+    </dependency>
+                  
+    
+    
+    <dependency>
+                            
+      
+      
+      <groupId>org.apache.commons</groupId>
+                            
+      
+      
+      <artifactId>commons-math3</artifactId>
+                            
+      
+      
+      <version>3.6.1</version>
+                        
+    
+    
+    </dependency>
+                  
+    
+    
+    <dependency>
+                            
+      
+      
+      <groupId>org.junit.jupiter</groupId>
+                            
+      
+      
+      <artifactId>junit-jupiter</artifactId>
+                            
+      
+      
+      <version>RELEASE</version>
+                            
+      
+      
+      <scope>test</scope>
+                        
+    
+    
+    </dependency>
+              
+  
+  
+  </dependencies>
+        
+  
+  
+  <properties>
+                  
+    
+    
+    <maven.compiler.target>11</maven.compiler.target>
+                  
+    
+    
+    <maven.compiler.source>11</maven.compiler.source>
+              
+  
+  
+  </properties>
+        
+  
+  
+  <build>
+                  
+    
+    
+    <plugins>
+                            
+      
+      
+      <plugin>
+                                      
+        
+        
+        <groupId>org.codehaus.mojo</groupId>
+                                      
+        
+        
+        <artifactId>exec-maven-plugin</artifactId>
+                                      
+        
+        
+        <version>1.1.1</version>
+                                      
+        
+        
+        <executions>
+                                                
+          
+          
+          <execution>
+                                                          
+            
+            
+            <phase>test</phase>
+                                                          
+            
+            
+            <goals>
+                                                                    
+              
+              
+              <goal>java</goal>
+                                                                
+            
+            
+            </goals>
+                                                          
+            
+            
+            <configuration>
+                                                                    
+              
+              
+              <mainClass>de.stl.saar.internetentw1.uebungen.MyMath</mainClass>
+                                                                    
+              
+              
+              <arguments>
+                                                                              
+                
+                
+                <argument>1</argument>
+                                                                              
+                
+                
+                <argument>1</argument>
+                                                                          
+              
+              
+              </arguments>
+                                                                
+            
+            
+            </configuration>
+                                                      
+          
+          
+          </execution>
+                                            
+        
+        
+        </executions>
+                                  
+      
+      
+      </plugin>
+                            
+      
+      
+      <plugin>
+                                      
+        
+        
+        <artifactId>maven-assembly-plugin</artifactId>
+                                      
+        
+        
+        <version>3.3.0</version>
+                                        
+        
+        
+        <configuration>
+                                                  
+          
+          
+          <archive>
+                                                            
+            
+            
+            <manifest>
+                                                                      
+              
+              
+              <mainClass>de.stl.saar.internetentw1.uebungen.MyMath</mainClass>
+                                                                  
+            
+            
+            </manifest>
+                                                        
+          
+          
+          </archive>
+                                                  
+          
+          
+          <descriptorRefs>
+                                                            
+            
+            
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+                                                        
+          
+          
+          </descriptorRefs>
+                                              
+        
+        
+        </configuration>
+                                        
+        
+        
+        <executions>
+                                                  
+          
+          
+          <execution>
+                                                            
+            
+            
+            <id>make-assembly</id>
+                                                            
+            
+            
+            <phase>package</phase>
+                                                            
+            
+            
+            <goals>
+                                                                      
+              
+              
+              <goal>single</goal>
+                                                                  
+            
+            
+            </goals>
+                                                        
+          
+          
+          </execution>
+                                              
+        
+        
+        </executions>
+                                  
+      
+      
+      </plugin>
+                        
+    
+    
+    </plugins>
+              
+  
+  
+  </build>
+      
+
+
+</project>
